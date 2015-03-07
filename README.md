@@ -54,7 +54,8 @@ Extract Helion_Openstack_Community_V1.4.tar.gz under /opt directory:
 Start seed vm deployment:
 
     host> export HP_VM_MODE=y
-    host> time bash -x /opt/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed 2>&1|tee seed-install.log
+    host> time bash -x /opt/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh \
+      --create-seed 2>&1|tee seed-install.log
     ...
     real    5m7.533s
     user    0m0.705s
@@ -81,7 +82,8 @@ Set the environment variables:
 
 Start undercloud deployment:
 
-    seed> time bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-demo --skip-install-overcloud 2>&1|tee undercloud-install.log
+    seed> time bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh \
+      --skip-demo --skip-install-overcloud 2>&1|tee undercloud-install.log
     ...
     real    14m59.347s
     user    1m11.924s
@@ -89,7 +91,8 @@ Start undercloud deployment:
 
 ### Install the overcloud ###
 
-    seed> bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1|tee overcloud-install.log
+    seed> bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh \
+      --skip-install-seed --skip-install-undercloud 2>&1|tee overcloud-install.log
 
 Access overcloud dashboard
 --------------------------
@@ -119,7 +122,7 @@ Display account information:
     overcloud_dashboard.user:      admin
     overcloud_dashboard.password:  e95d24XXXXXXXXXXXXXXXXXXXXXXXX
 
-Login at <undercloud_dashboard_url> with <undercloud_dashboard_user> / <undercloud_dashboard_password>
+Login at `undercloud_dashboard_url` with `undercloud_dashboard_user` / `undercloud_dashboard_password`
 
 Cleaning up
 -----------
