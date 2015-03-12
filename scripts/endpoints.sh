@@ -30,6 +30,8 @@ column -t -e -s !<<EOF
 ## OVERCLOUD ##
 overcloud.ip:!$OVERCLOUD_IP
 overcloud_dashboard.url:!http://$OVERCLOUD_IP
-overcloud_dashboard.user:!admin
-overcloud_dashboard.password:!$OVERCLOUD_ADMIN_PASSWORD
+overcloud_dashboard.admin.user:!admin
+overcloud_dashboard.admin.password:!$OVERCLOUD_ADMIN_PASSWORD
+overcloud_dashboard.demo.user:!demo
+overcloud_dashboard.demo.password:!$OVERCLOUD_DEMO_PASSWORD
 EOF
